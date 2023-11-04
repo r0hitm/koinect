@@ -8,11 +8,14 @@ import { AuthProvider } from "./hooks/useAuth.jsx";
 import Login from "./pages/Login.jsx";
 import Register from "./pages/Register.jsx";
 
+import { loadSubscriptionList } from "./util/loaders.js";
+
 const router = createBrowserRouter(
     [
         {
             path: "/",
             element: <App />,
+            loader: loadSubscriptionList,
             // errorPage: // component  to render when error (see below)
             // children: [/* nested routes */], // to render use <Outlet /> in <App />
         },
