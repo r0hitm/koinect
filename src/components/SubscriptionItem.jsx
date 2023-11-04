@@ -1,17 +1,22 @@
 // import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
-function SubscriptionItem({ name, price, tag, renewal }) {
+function SubscriptionItem({
+    subscriptionName,
+    price,
+    subscriptionMonth,
+    subscriptionDate,
+}) {
     return (
         <div className="subscriptionItemCard">
             <div className="ItemDetails">
-            <h3>{name}</h3>
-            <p>{renewal}</p>
-            <div className="categoryTag">
-
-            <p >{tag}</p>
-            </div>
-
+                <h3>{subscriptionName}</h3>
+                <p>
+                    {subscriptionMonth}/{subscriptionDate}
+                </p>
+                {/* <div className="categoryTag">
+                    <p>{tag}</p>
+                </div> */}
             </div>
             <h3 className="priceTag">${price}</h3>
         </div>
@@ -19,10 +24,10 @@ function SubscriptionItem({ name, price, tag, renewal }) {
 }
 
 SubscriptionItem.propTypes = {
-    name: PropTypes.string.isRequired,
+    subscriptionName: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
-    tag: PropTypes.string.isRequired,
-    renewal: PropTypes.string.isRequired,
+    subscriptionMonth: PropTypes.number.isRequired,
+    subscriptionDate: PropTypes.number.isRequired,
 };
 
 export default SubscriptionItem;

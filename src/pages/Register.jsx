@@ -49,13 +49,13 @@ function Register() {
                     <input className="dataPlaceholder"
                         type="email"
                         placeholder="Email"
-                        value={email}
+                        defaultValue={email}
                         onChange={event => setEmail(event.target.value)}
                         required
                     />
                 </div>
                 <div>
-                    <input className="dataPlaceholder" type="password" placeholder="Password" value={password} onChange={event => setPassword(event.target.value)} required />
+                    <input className="dataPlaceholder" type="password" placeholder="Password" defaultValue={password} onChange={event => setPassword(event.target.value)} required />
                 </div>
                 <div>
                     <input className="dataPlaceholder"
