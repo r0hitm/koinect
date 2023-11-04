@@ -10,20 +10,25 @@ import Register from "./pages/Register.jsx";
 
 import { SubscriptionsProvider } from "./lib/appwrite_db.jsx";
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+    [
+        {
+            path: "/",
+            element: <App />,
+        },
+        {
+            path: "/login",
+            element: <Login />,
+        },
+        {
+            path: "/register",
+            element: <Register />,
+        },
+    ],
     {
-        path: "/",
-        element: <App />,
-    },
-    {
-        path: "/login",
-        element: <Login />,
-    },
-    {
-        path: "/register",
-        element: <Register />,
-    },
-]);
+        basename: "/koinect/",
+    }
+);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
     <React.StrictMode>
