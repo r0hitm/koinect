@@ -1,9 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
+import AppHeader from "../components/AppHeader";
+import AppBody from "../components/AppBody";
+import AppFooter from "../components/AppFooter";
 
 function App() {
-    const [count, setCount] = useState(0);
     const navigate = useNavigate();
     const user = useAuth();
 
@@ -15,12 +17,9 @@ function App() {
 
     return (
         <>
-            <div className="App">
-                <h1>Hello, World!</h1>
-                <p>You clicked {count} times</p>
-                <button onClick={() => setCount(count + 1)}>Click me</button>
-            </div>
-            <button onClick={() => user.logout()}>Logout</button>
+            <AppHeader />
+            <AppBody />
+            <AppFooter />
         </>
     );
 }
