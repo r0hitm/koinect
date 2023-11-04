@@ -1,7 +1,7 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { account } from "../lib/appwrite";
 import { ID } from "appwrite";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 const AuthContext = createContext();
 
@@ -83,5 +83,5 @@ export function AuthProvider({ children }) {
 }
 
 AuthProvider.propTypes = {
-    children: PropTypes.node.isRequired
+    children: PropTypes.node.isRequired,
 };
