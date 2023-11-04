@@ -7,6 +7,7 @@ import { useState } from "react";
 function Subscriptions() {
     // data as obtained by fetching the backend using the react-dom loader
     const subscriptions = useSubscriptions();
+
     // if (!subscriptions)
     //     return (
     //         <p>
@@ -68,15 +69,6 @@ function NewSubscriptionModal() {
                         onSubmit={e => {
                             e.preventDefault();
                             const [, M, D] = startingDate.split("-");
-                            console.log({
-                                startingDate,
-                                userId: user.current.$id,
-                                subscriptionName: name,
-                                price: parseFloat(price),
-                                subscriptionMonth: parseInt(M),
-                                subscriptionDate: parseInt(D),
-                                frequency: parseInt(frequency),
-                            });
                             data.add(user.current.$id, {
                                 userId: user.current.$id,
                                 subscriptionName: name,

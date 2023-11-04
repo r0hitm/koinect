@@ -1,7 +1,7 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { DATABASE_ID, COLLECTION_ID } from "./appwrite_id";
 import { databases } from "./appwrite";
-import { Query } from "appwrite";
+import { Query, ID } from "appwrite";
 import PropTypes from "prop-types";
 import { useAuth } from "../hooks/useAuth";
 
@@ -21,10 +21,10 @@ export function SubscriptionsProvider(props) {
         const response = await databases.createDocument(
             DATABASE_ID,
             COLLECTION_ID,
-            userId,
+            ID.unique(),
             subscription
         );
-        setSubscriptions(subs => [response.$id, ...subs].slice(0, 10));
+        setSubscriptions(subs => [response, ...subs]);
     }
 
     async function remove(id) {
