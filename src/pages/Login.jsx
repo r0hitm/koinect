@@ -33,6 +33,7 @@ function Login() {
     return (
         <section>
             <AppHeader />
+<<<<<<< Updated upstream
            <div className="loginForm">
            <h1>Log into your account</h1>
             <form onSubmit={handleLogin}>
@@ -54,6 +55,29 @@ function Login() {
                 </div>
             </form>
            </div>
+=======
+            <div className="loginForm">
+                <h1>Log into your account</h1>
+                <form onSubmit={handleLogin}>
+                    <div>
+                        <input className="dataPlaceholder" type="email" placeholder="Email" value={email} onChange={event => setEmail(event.target.value)} required />
+                    </div>
+                    <div>
+                        <input className="dataPlaceholder" type="password" placeholder="Password" value={password} onChange={event => setPassword(event.target.value)} required
+                        />
+                    </div>
+                    {error && <p className="errorMessage">{error}</p>}
+                    <div>
+                        <button className="loginBtn primaryButton" type="submit" disabled={loading}>
+                            Login
+                        </button>
+                    </div>
+                    <div>
+                        Don&apos;t have an account? <Link to="/register">Register Here</Link>
+                    </div>
+                </form>
+            </div>
+>>>>>>> Stashed changes
         </section>
     );
 }

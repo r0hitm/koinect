@@ -65,7 +65,7 @@ function Register() {
                         required
                     />
                 </div>
-                {error && <p>{error}</p>}
+                {error && <p className="errorMessage">{error}</p>}
                 <div>
                     <button className="loginBtn primaryButton" type="submit" disabled={loading}>
                         Create Account
