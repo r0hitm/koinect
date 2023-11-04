@@ -7,6 +7,7 @@ const AuthContext = createContext();
 /**
  * @returns {{ current: import("appwrite").models.User, login: (email: string, password: string) => Promise<void>, logout: () => Promise<void>, register: (email: string, password: string) => Promise<void> }}
  */
+// eslint-disable-next-line react-refresh/only-export-components
 export function useAuth() {
     return useContext(AuthContext);
 }
