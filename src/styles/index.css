@@ -1,31 +1,49 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Manrope:wght@700&display=swap');
 
-:root{
---theme-100:#FCFFFC;
---theme-300:#B3EFB2;
---theme-500:#22C55E;
---theme-600:#166534;
---theme-700:#001A23;
+:root {
+    --theme-100: #FCFFFC;
+    --theme-300: #B3EFB2;
+    --theme-500: #22c55e;
+    --theme-600: #166534;
+    --theme-700: #001A23;
+    --gray-50: #f8fafc;
+    --gray-100: #f1f5f9;
+    --gray-200: #e2e8f0;
+    --gray-300: #cbd5e1;
+    --gray-400: #94a3b8;
+    --gray-500: #64748b;
+    --gray-600: #475569;
+    --gray-700: #334155;
+    --gray-800: #1e293b;
+    --gray-900: #0f172a;
+    --gray-950: #020617;
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
     font-family: 'Inter', sans-serif;
     font-weight: 400;
-   
+
 }
-body{
+
+body {
     padding: 0 12px 0 12px;
 }
-h1,h2,h3,h4,h5,h6{
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: 'Manrope', sans-serif;
     font-weight: 700;
 
 }
 
 /* header */
-.header{
+.header {
     display: flex;
     justify-content: space-between;
     padding: 24px 4px;
@@ -33,12 +51,14 @@ h1,h2,h3,h4,h5,h6{
 }
 
 /* button components */
-    /* primary button */
-.primaryButton{
+/* primary button */
+.primaryButton {
+    cursor: pointer;
+    transform: scale(1);
     display: flex;
     justify-content: center;
-align-items: center;
-        text-align: center;
+    align-items: center;
+    text-align: center;
     text-decoration: none;
     border: none;
     border-radius: 8px;
@@ -48,8 +68,17 @@ align-items: center;
     font-weight: 600;
 
 }
+
+.primaryButton:hover {
+    transform: scale(0.95);
+    transition: all 0.25s ease-in-out;
+
+}
+
 /* secondary button */
-.secondaryButton{
+.secondaryButton {
+    cursor: pointer;
+    transform: scale(1);
     display: flex;
     text-decoration: none;
     border: solid 2px var(--theme-500);
@@ -61,25 +90,33 @@ align-items: center;
 
 }
 
+.secondaryButton:hover {
+    transform: scale(0.95);
+    transition: all 0.25s ease-in-out;
+}
 
 
-.logoWithText{
+
+.logoWithText {
     display: flex;
     margin: 0 0 0 0;
 
 }
 
-.buttonSVG{
+.buttonSVG {
     margin-right: 4px;
 
 }
 
-.subscriptionSection{
+.subscriptionSection {
     display: flex;
     justify-content: space-between;
     padding: 24px 0;
+
+
 }
-.subscriptionItemCard{
+
+.subscriptionItemCard {
     display: flex;
     padding: 16px;
     margin-bottom: 8px;
@@ -88,30 +125,62 @@ align-items: center;
     justify-content: space-between;
     align-items: center;
 }
-.ItemDetails{
+
+.ItemDetails {
     display: flex;
     flex-direction: column;
     gap: 2.5px;
 
 }
-.categoryTag{
- background-color: var(--theme-300);
- color: var(--theme-700);
- padding: 6px 10px;
- margin-top: 4px;
- border-radius: 5px;
- font-weight: 600;
- font-size: 12px;
- max-width: fit-content;
+
+.categoryTag {
+    background-color: var(--theme-300);
+    color: var(--theme-700);
+    padding: 6px 10px;
+    margin-top: 4px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 12px;
+    max-width: fit-content;
 
 
 }
-.priceTag{
- color: var(--theme-700);
- font-weight: 600;
+
+.priceTag {
+    color: var(--theme-700);
+    font-weight: 600;
 }
 
-.footerEndtext{
+
+.dataPlaceholder {
+    padding: 14px;
+    margin: 2px 0;
+    border-radius: 8px;
+    border: solid 1px rgba(0, 128, 0, 0.25);
+}
+
+.subscriptionList {
+    max-height: 60vh;
+    overflow-y: scroll;
+}
+
+.loginForm {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    padding: 24px 12px;
+}
+
+.loginBtn {
+    margin-top: 4px;
+}
+
+form {
+    padding-top: 12px;
+}
+
+
+.footerEndtext {
     /* position: absolute;
     bottom: 0;
     left: 50vw; */
@@ -119,28 +188,12 @@ align-items: center;
     color: #b1b1b1;
 }
 
-
-.dataPlaceholder{
-    padding: 14px;
-    margin: 2px 0 ;
-    border-radius:8px;
-    border:solid 1px rgba(0, 128, 0, 0.25);
-}
-.loginForm{
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
-    padding: 24px 12px;
-    /* background: #000; */
-    position: absolute;
-}
-input{
-    width: 100%;
-}
-.loginBtn {
-    margin-top: 4px;
+::-webkit-scrollbar {
+    background-color: var(--gray-200);
+    width: 6px;
 }
 
-form{
-    padding-top: 12px;
+::-webkit-scrollbar-thumb{
+border-radius: 100px;
+    background-color: var(--theme-500);
 }

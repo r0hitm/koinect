@@ -5,7 +5,7 @@ function SubscriptionItem({ name, price, tag, renewal }) {
     return (
         <div className="subscriptionItemCard">
             <div className="ItemDetails">
-            <h2>{name}</h2>
+            <h3>{name}</h3>
             <p>{renewal}</p>
             <div className="categoryTag">
 
