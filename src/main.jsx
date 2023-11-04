@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import App from "./App.jsx";
+import App from "./pages/App.jsx";
 import "./styles/index.css";
 import { AuthProvider } from "./hooks/useAuth.jsx";
 
@@ -12,7 +12,7 @@ const router = createBrowserRouter(
     [
         {
             path: "/",
-            element: <App />, // jsx or component to be rendered on this path
+            element: <App />,
             // errorPage: // component  to render when error (see below)
             // children: [/* nested routes */], // to render use <Outlet /> in <App />
         },

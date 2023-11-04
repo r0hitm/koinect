@@ -2,7 +2,12 @@ import { createContext, useContext, useEffect, useState } from "react";
 import { account } from "../lib/appwrite";
 import { ID } from "appwrite";
 
-const AuthContext = createContext();
+const AuthContext = createContext({
+    current: null,
+    login: () => {},
+    logout: () => {},
+    register: () => {},
+});
 
 /**
  * @returns {{ current: import("appwrite").models.User, login: (email: string, password: string) => Promise<void>, logout: () => Promise<void>, register: (email: string, password: string) => Promise<void> }}
