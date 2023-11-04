@@ -4,7 +4,6 @@ import { useAuth } from "../hooks/useAuth";
 import AppHeader from "../components/AppHeader";
 import AppBody from "../components/AppBody";
 import AppFooter from "../components/AppFooter";
-import PrimaryButton from "../components/PrimaryButton";
 
 function App() {
     const navigate = useNavigate();
@@ -21,7 +20,6 @@ function App() {
             <AppHeader />
             <AppBody />
             <AppFooter />
-            <PrimaryButton />
         </>
     );
 }
