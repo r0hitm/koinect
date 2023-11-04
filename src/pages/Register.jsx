@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useAuth } from "../hooks/useAuth";
+import { useNavigate, Link } from "react-router-dom";
 
 function Register() {
     const user = useAuth();
@@ -9,6 +10,13 @@ function Register() {
     const [confirm, setConfirm] = useState("");
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (!user.loading && user.current) {
+            navigate("/");
+        }
+    }, [user, navigate]);
 
     const handleRegister = event => {
         event.preventDefault();
@@ -63,6 +71,9 @@ function Register() {
                     <button className="button" type="submit" disabled={loading}>
                         Register
                     </button>
+                </div>
+                <div>
+                    Already have an account? <Link to="/login">Login here</Link>
                 </div>
             </form>
         </section>

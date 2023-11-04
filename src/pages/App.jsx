@@ -8,7 +8,7 @@ function App() {
     const user = useAuth();
 
     useEffect(() => {
-        if (!user.current) {
+        if (!user.current && !user.loading) {
             navigate("/login");
         }
     }, [user, navigate]);

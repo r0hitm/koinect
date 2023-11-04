@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useAuth } from "../hooks/useAuth";
+import { useNavigate, Link } from "react-router-dom";
 
 function Login() {
     const user = useAuth();
@@ -8,6 +9,13 @@ function Login() {
     const [password, setPassword] = useState("");
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (!user.loading && user.current) {
+            navigate("/");
+        }
+    }, [user, navigate]);
 
     const handleLogin = event => {
         event.preventDefault();
@@ -49,6 +57,9 @@ function Login() {
                     <button className="button" type="submit" disabled={loading}>
                         Login
                     </button>
+                </div>
+                <div>
+                    Don't have an account? <Link to="/register">Register Here</Link>
                 </div>
             </form>
         </section>

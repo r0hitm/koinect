@@ -2,12 +2,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 import { account } from "../lib/appwrite";
 import { ID } from "appwrite";
 
-const AuthContext = createContext({
-    current: null,
-    login: () => {},
-    logout: () => {},
-    register: () => {},
-});
+const AuthContext = createContext();
 
 /**
  * @returns {{ current: import("appwrite").models.User, login: (email: string, password: string) => Promise<void>, logout: () => Promise<void>, register: (email: string, password: string) => Promise<void> }}
@@ -23,6 +18,7 @@ export function useAuth() {
 // eslint-disable-next-line react/prop-types
 export function AuthProvider({ children }) {
     const [user, setUser] = useState(null);
+    const [loading, setLoading] = useState(true);
 
     /**
      * @param {string} email
@@ -31,6 +27,7 @@ export function AuthProvider({ children }) {
      */
     async function login(email, password) {
         const loggedIn = await account.createEmailSession(email, password);
+        console.log("logging in. setting user to: ", loggedIn);
         setUser(loggedIn);
     }
 
@@ -38,6 +35,7 @@ export function AuthProvider({ children }) {
      * @returns {Promise<void>}
      */
     async function logout() {
+        console.log("logging out");
         await account.deleteSession("current");
         setUser(null);
     }
@@ -59,9 +57,13 @@ export function AuthProvider({ children }) {
     async function init() {
         try {
             const loggedIn = await account.get();
+            console.log("user logged in, setting to: ", loggedIn);
             setUser(loggedIn);
         } catch (err) {
+            console.log("user not logged in, setting to null. Error: ", err);
             setUser(null);
+        } finally {
+            setLoading(false);
         }
     }
 
@@ -72,7 +74,7 @@ export function AuthProvider({ children }) {
 
     return (
         <AuthContext.Provider
-            value={{ current: user, login, logout, register }}
+            value={{ current: user, login, logout, register, loading }}
         >
             {children}
         </AuthContext.Provider>
