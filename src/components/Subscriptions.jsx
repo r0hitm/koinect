@@ -1,6 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import SubscriptionItem from "./SubscriptionItem";
-import { addSubscription } from "../lib/appwrite_db";
+import { useSubscriptions } from "../lib/appwrite_db";
 import { useAuth } from "../hooks/useAuth";
 import { useState } from "react";
 
@@ -44,10 +44,10 @@ function Subscriptions() {
 
 function NewSubscriptionModal() {
     const user = useAuth();
+    const data = useSubscriptions();
+    console.log({ data });
     const [name, setName] = useState("");
     const [price, setPrice] = useState(0);
-    const [tag, setTag] = useState(""); // optional
-    // set current month and date as "MM-DD"
     const [startingDate, setStartingDate] = useState(
         `${new Date().getMonth() + 1}-${new Date().getDate()}`
     );
@@ -61,19 +61,23 @@ function NewSubscriptionModal() {
                     <form
                         onSubmit={e => {
                             e.preventDefault();
-                            addSubscription(user.current, {
-                                name,
-                                price,
-                                tag,
+                            const [, M, D] = startingDate.split("-");
+                            console.log({
                                 startingDate,
-                                frequency, // in months
+                                userId: user.current.$id,
+                                subscriptionName: name,
+                                price: parseFloat(price),
+                                subscriptionMonth: parseInt(M),
+                                subscriptionDate: parseInt(D),
+                                frequency: parseInt(frequency),
                             });
-                            console.log("New Subscription request submitted", {
-                                name,
-                                price,
-                                tag,
-                                startingDate,
-                                frequency, // in months)
+                            data.add(user.current.$id, {
+                                userId: user.current.$id,
+                                subscriptionName: name,
+                                price: parseFloat(price),
+                                subscriptionMonth: parseInt(M),
+                                subscriptionDate: parseInt(D),
+                                frequency: parseInt(frequency),
                             });
                         }}
                     >
@@ -103,24 +107,12 @@ function NewSubscriptionModal() {
                         <div>
                             <input
                                 className="dataPlaceholder"
-                                type="text"
-                                placeholder="Tag"
-                                defaultValue={tag}
-                                onChange={event => setTag(event.target.value)}
-                            />
-                        </div>
-                        <div>
-                            <input
-                                className="dataPlaceholder"
                                 type="date"
                                 placeholder="Starting Date"
                                 defaultValue={startingDate}
-                                onChange={event => {
-                                    const [, M, D] =
-                                        event.target.value.split("-");
-                                    // console.log("M", M, "D", D);
-                                    setStartingDate(`${M}-${D}`);
-                                }}
+                                onChange={event =>
+                                    setStartingDate(event.target.value)
+                                }
                                 required
                             />
                         </div>

@@ -9,6 +9,7 @@ import Login from "./pages/Login.jsx";
 import Register from "./pages/Register.jsx";
 
 import { loadSubscriptionList } from "./util/loaders.js";
+import { SubscriptionsProvider } from "./lib/appwrite_db.jsx";
 
 const router = createBrowserRouter(
     [
@@ -37,7 +38,9 @@ const router = createBrowserRouter(
 ReactDOM.createRoot(document.getElementById("root")).render(
     <React.StrictMode>
         <AuthProvider>
-            <RouterProvider router={router} />
+            <SubscriptionsProvider>
+                <RouterProvider router={router} />
+            </SubscriptionsProvider>
         </AuthProvider>
     </React.StrictMode>
 );
