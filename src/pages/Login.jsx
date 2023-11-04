@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useAuth } from "../hooks/useAuth";
 import { useNavigate, Link } from "react-router-dom";
-
+import AppHeader from "../components/AppHeader";
 function Login() {
     const user = useAuth();
 
@@ -32,29 +32,19 @@ function Login() {
 
     return (
         <section>
+            <AppHeader />
             <h1>Login</h1>
             <form onSubmit={handleLogin}>
                 <div>
-                    <input
-                        type="email"
-                        placeholder="Email"
-                        value={email}
-                        onChange={event => setEmail(event.target.value)}
-                        required
-                    />
+                    <input class="placeholder" type="email" placeholder="Email" value={email} onChange={event => setEmail(event.target.value)} required />
                 </div>
                 <div>
-                    <input
-                        type="password"
-                        placeholder="Password"
-                        value={password}
-                        onChange={event => setPassword(event.target.value)}
-                        required
+                    <input type="password" placeholder="Password" value={password} onChange={event => setPassword(event.target.value)} required
                     />
                 </div>
                 {error && <p>{error}</p>}
                 <div>
-                    <button className="button" type="submit" disabled={loading}>
+                    <button className="primaryButton" type="submit" disabled={loading}>
                         Login
                     </button>
                 </div>

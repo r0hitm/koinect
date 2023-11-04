@@ -1,7 +1,7 @@
 function AppFooter() {
     return (
         <footer>
-            <p>App Footer</p>
+            <p className="footerEndtext">Thanks for using Koinect!</p>
         </footer>
     );
 }
