@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+// import { useLoaderData } from "react-router-dom";
 import SubscriptionItem from "./SubscriptionItem";
 import { useSubscriptions } from "../lib/appwrite_db";
 import { useAuth } from "../hooks/useAuth";
@@ -6,7 +6,13 @@ import { useState } from "react";
 
 function Subscriptions() {
     // data as obtained by fetching the backend using the react-dom loader
-    const subscriptions = useLoaderData();
+    const subscriptions = useSubscriptions();
+    // if (!subscriptions)
+    //     return (
+    //         <p>
+    //             subscriptions in Subscriptions.jsx is {subscriptions.toString()}
+    //         </p>
+    //     );
     // const user = useAuth();
 
     return (
@@ -32,7 +38,7 @@ function Subscriptions() {
             <div className="subscriptionList">
                 <div className="subscriptions">
                     {/* <h1>My Subscriptions</h1> */}
-                    {subscriptions.map((subscription, index) => (
+                    {subscriptions.current.map((subscription, index) => (
                         <SubscriptionItem key={index} {...subscription} />
                     ))}
                 </div>
@@ -45,7 +51,7 @@ function Subscriptions() {
 function NewSubscriptionModal() {
     const user = useAuth();
     const data = useSubscriptions();
-    console.log({ data });
+    // console.log({ data });
     const [name, setName] = useState("");
     const [price, setPrice] = useState(0);
     const [startingDate, setStartingDate] = useState(

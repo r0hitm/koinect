@@ -43,9 +43,9 @@ export function SubscriptionsProvider(props) {
         setSubscriptions(response.documents);
     }
 
-    // useEffect(() => {
-    //     if (user.current) init(user.current.$id);
-    // }, [user]);
+    useEffect(() => {
+        if (user.current) init(user.current.$id);
+    }, [user]);
 
     return (
         <SubscriptionsContext.Provider
