@@ -13,7 +13,7 @@ function SubscriptionItem({ name, price, tag, renewal }) {
             </div>
 
             </div>
-            <p className="priceTag">${price}</p>
+            <h3 className="priceTag">${price}</h3>
         </div>
     );
 }

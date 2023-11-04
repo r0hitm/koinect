@@ -7,7 +7,7 @@ function Subscriptions() {
 
     return (
         <div className="subscriptions">
-            <h1>My Subscriptions</h1>
+            {/* <h1>My Subscriptions</h1> */}
             {subscriptions.map((subscription, index) => (
                 <SubscriptionItem key={index} {...subscription} />
             ))}

@@ -33,18 +33,19 @@ function Login() {
     return (
         <section>
             <AppHeader />
-            <h1>Login</h1>
+           <div className="loginForm">
+           <h1>Log into your account</h1>
             <form onSubmit={handleLogin}>
                 <div>
-                    <input className="placeholder" type="email" placeholder="Email" value={email} onChange={event => setEmail(event.target.value)} required />
+                    <input className="dataPlaceholder" type="email" placeholder="Email" value={email} onChange={event => setEmail(event.target.value)} required />
                 </div>
                 <div>
-                    <input type="password" placeholder="Password" value={password} onChange={event => setPassword(event.target.value)} required
+                    <input className="dataPlaceholder" type="password" placeholder="Password" value={password} onChange={event => setPassword(event.target.value)} required
                     />
                 </div>
                 {error && <p>{error}</p>}
                 <div>
-                    <button className="primaryButton" type="submit" disabled={loading}>
+                    <button className="loginBtn primaryButton" type="submit" disabled={loading}>
                         Login
                     </button>
                 </div>
@@ -52,6 +53,7 @@ function Login() {
                     Don&apos;t have an account? <Link to="/register">Register Here</Link>
                 </div>
             </form>
+           </div>
         </section>
     );
 }

@@ -36,6 +36,9 @@ h1,h2,h3,h4,h5,h6{
     /* primary button */
 .primaryButton{
     display: flex;
+    justify-content: center;
+align-items: center;
+        text-align: center;
     text-decoration: none;
     border: none;
     border-radius: 8px;
@@ -43,6 +46,7 @@ h1,h2,h3,h4,h5,h6{
     background-color: var(--theme-500);
     color: var(--theme-900);
     font-weight: 600;
+
 }
 /* secondary button */
 .secondaryButton{
@@ -54,6 +58,7 @@ h1,h2,h3,h4,h5,h6{
     padding: 6px 12px;
     color: var(--theme-900);
     font-weight: 600;
+
 }
 
 
@@ -71,19 +76,29 @@ h1,h2,h3,h4,h5,h6{
 
 .subscriptionSection{
     display: flex;
+    justify-content: space-between;
+    padding: 24px 0;
 }
 .subscriptionItemCard{
     display: flex;
+    padding: 16px;
+    margin-bottom: 8px;
+    border: solid 1px #16653440;
+    border-radius: 9px;
+    justify-content: space-between;
+    align-items: center;
 }
 .ItemDetails{
     display: flex;
     flex-direction: column;
+    gap: 2.5px;
 
 }
 .categoryTag{
  background-color: var(--theme-300);
  color: var(--theme-700);
  padding: 6px 10px;
+ margin-top: 4px;
  border-radius: 5px;
  font-weight: 600;
  font-size: 12px;
@@ -101,5 +116,31 @@ h1,h2,h3,h4,h5,h6{
     bottom: 0;
     left: 50vw; */
     text-align: center;
-    color: gray;
+    color: #b1b1b1;
+}
+
+
+.dataPlaceholder{
+    padding: 14px;
+    margin: 2px 0 ;
+    border-radius:8px;
+    border:solid 1px rgba(0, 128, 0, 0.25);
+}
+.loginForm{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    padding: 24px 12px;
+    /* background: #000; */
+    position: absolute;
+}
+input{
+    width: 100%;
+}
+.loginBtn {
+    margin-top: 4px;
+}
+
+form{
+    padding-top: 12px;
 }
