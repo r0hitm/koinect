@@ -37,10 +37,10 @@ function Login() {
            <h1>Log into your account</h1>
             <form onSubmit={handleLogin}>
                 <div>
-                    <input className="dataPlaceholder" type="email" placeholder="Email" value={email} onChange={event => setEmail(event.target.value)} required />
+                    <input className="dataPlaceholder" type="email" placeholder="Email" defaultValue={email} onChange={event => setEmail(event.target.value)} required />
                 </div>
                 <div>
-                    <input className="dataPlaceholder" type="password" placeholder="Password" value={password} onChange={event => setPassword(event.target.value)} required
+                    <input className="dataPlaceholder" type="password" placeholder="Password" defaultValue={password} onChange={event => setPassword(event.target.value)} required
                     />
                 </div>
                 {error && <p>{error}</p>}

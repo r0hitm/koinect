@@ -1,5 +1,5 @@
 import { DATABASE_ID, COLLECTION_ID } from "./appwrite_id";
-import { databases } from "appwrite";
+import { databases } from "./appwrite";
 
 /**
  * Add a new subscription to the collection as a new document

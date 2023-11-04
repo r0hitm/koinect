@@ -1,17 +1,15 @@
 // import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 function SubscriptionItem({ name, price, tag, renewal }) {
     return (
         <div className="subscriptionItemCard">
             <div className="ItemDetails">
-            <h3>{name}</h3>
-            <p>{renewal}</p>
-            <div className="categoryTag">
-
-            <p >{tag}</p>
-            </div>
-
+                <h3>{name}</h3>
+                <p>{renewal.toString()}</p>
+                <div className="categoryTag">
+                    <p>{tag}</p>
+                </div>
             </div>
             <h3 className="priceTag">${price}</h3>
         </div>
