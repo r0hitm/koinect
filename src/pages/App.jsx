@@ -18,12 +18,9 @@ function App() {
 
     return user.current ? (
         <>
-        <AppHeader />
-        <div className="roundedBG">
+            <AppHeader />
             <AppBody />
             <AppFooter />
-
-        </div>
         </>
     ) : (
         <LoadingSpinner />

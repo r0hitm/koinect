@@ -3,7 +3,7 @@ import Insights from "../components/Insights";
 
 function AppBody() {
     return (
-        <main className="">
+        <main className="roundedBG">
             <Insights />
             <Subscriptions />
             {/* <Graph/> */}
