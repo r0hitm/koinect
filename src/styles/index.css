@@ -337,3 +337,10 @@ form {
 .upperBox>span, .lowerBox>span{
     color: var(--gray-200);
 }
+.insightsFlexItem>h1{
+    color: var(--theme-700);
+}
+.insightSubtitles{
+    color: var(--gray-500);
+    font-size: 14px;
+}

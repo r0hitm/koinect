@@ -43,22 +43,22 @@ export default function Insights() {
                 <div className="upperBox">
                     <div className="insightsFlexItem">
                         <h1>{subsCount}</h1>
-                        <span>Subscriptions</span>
+                        <span className="insightSubtitles" >Subscriptions</span>
                     </div>
                     <div className="insightsFlexItem">
                         <h1>{totalExpenditure}</h1>
-                        <span>Total Expenditure</span>
+                        <span className="insightSubtitles" >Total Expenditure</span>
                     </div>
                 </div>
 
             <div className="lowerBox">
                 <div className="insightsFlexItem">
                     <h1>{thisMonthExpenditure}</h1>
-                    <span>This Month&apos;s Expenditure</span>
+                    <span className="insightSubtitles" >This Month&apos;s Expenditure</span>
                 </div>
                 <div className="insightsFlexItem">
                     <h1>{upcomingPayments}</h1>
-                    <span>Payments Due this month</span>
+                    <span className="insightSubtitles" >Payments Due this month</span>
                 </div>
                 </div>
 
