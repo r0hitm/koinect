@@ -8,7 +8,7 @@ import { AuthProvider } from "./hooks/useAuth.jsx";
 import Login from "./pages/Login.jsx";
 import Register from "./pages/Register.jsx";
 
-import { SubscriptionsProvider } from "./lib/appwrite_db.jsx";
+import { SubscriptionsProvider } from "./hooks/useSubscriptions.jsx";
 
 const router = createBrowserRouter([
     {

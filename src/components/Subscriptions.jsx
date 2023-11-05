@@ -1,6 +1,6 @@
 // import { useLoaderData } from "react-router-dom";
 import SubscriptionItem from "./SubscriptionItem";
-import { useSubscriptions } from "../lib/appwrite_db";
+import { useSubscriptions } from "../hooks/useSubscriptions";
 import { useAuth } from "../hooks/useAuth";
 import { useState } from "react";
 
