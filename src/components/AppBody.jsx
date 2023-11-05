@@ -5,8 +5,8 @@ function AppBody() {
     return (
         <main className="roundedBG">
             <Insights />
+            <hr className="divider" />
             <Subscriptions />
-            {/* <Graph/> */}
         </main>
     );
 }
