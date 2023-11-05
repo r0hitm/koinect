@@ -30,7 +30,6 @@ export function SubscriptionsProvider(props) {
     async function remove(id) {
         await databases.deleteDocument(DATABASE_ID, COLLECTION_ID, id);
         setSubscriptions(subs => subs.filter(sub => sub.$id !== id));
-        await init();
     }
 
     async function init(userId) {

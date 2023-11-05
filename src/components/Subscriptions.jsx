@@ -37,7 +37,13 @@ function Subscriptions() {
                 <div className="subscriptions">
                     {/* <h1>My Subscriptions</h1> */}
                     {subscriptions.current.map((subscription, index) => (
-                        <SubscriptionItem key={index} {...subscription} />
+                        <SubscriptionItem
+                            key={index}
+                            subscription={subscription}
+                            deleteHandler={() =>
+                                subscriptions.remove(subscription.$id)
+                            }
+                        />
                     ))}
                 </div>
             </div>
