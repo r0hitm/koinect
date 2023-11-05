@@ -3,17 +3,19 @@
 import { useEffect, useState } from "react";
 import { useSubscriptions } from "../hooks/useSubscriptions";
 import { useBudget } from "../hooks/useBudget";
-import { useAuth } from "../hooks/useAuth";
 
 export default function Insights() {
     const subscriptions = useSubscriptions();
     const userBudget = useBudget();
-    const user = useAuth();
 
     const [subsCount, setSubsCount] = useState(0);
     const [totalExpenditure, setTotalExpenditure] = useState(0);
     const [upcomingPayments, setUpcomingPayments] = useState(0);
-    const [budget, setBudget] = useState(0);
+    const [budget, setBudget] = useState();
+
+    useEffect(() => {
+        setBudget(userBudget.budget);
+    }, [userBudget]);
 
     useEffect(() => {
         if (subscriptions.current) {
@@ -36,10 +38,6 @@ export default function Insights() {
             }
         });
     }, [subscriptions]);
-
-    useEffect(() => {
-        userBudget.add(user.current.$id, budget);
-    }, [budget, user, userBudget]);
 
     return (
         <div className="insightsSection">
@@ -81,6 +79,7 @@ export default function Insights() {
                                         return;
                                     }
                                     setBudget(newBudget);
+                                    userBudget.updateBudget(newBudget);
                                 }}
                             >
                                 <g fill="none">

@@ -3,6 +3,7 @@ import { DATABASE_ID, USER_BUDGET_ID } from "../lib/appwrite_id";
 import { databases } from "../lib/appwrite";
 import { useAuth } from "./useAuth";
 import PropTypes from "prop-types";
+import { Query } from "appwrite";
 
 const BudgetContext = createContext();
 
@@ -13,48 +14,65 @@ export function useBudget() {
 
 export function BudgetProvider(props) {
     const [budget, setBudget] = useState(0);
+    const [loading, setLoading] = useState(true);
     const user = useAuth();
 
-    async function add(userId, budget) {
-        console.log({ userId, budget });
-        const response = await databases.createDocument(
+    async function updateBudget(budget) {
+        const response = await databases.listDocuments(
             DATABASE_ID,
             USER_BUDGET_ID,
-            userId,
-            budget
+            [Query.equal("userId", user.current ? user.current.$id : "")]
         );
-        setBudget(response);
+
+        if (response.documents.length === 0) {
+            try {
+                const response = await databases.createDocument(
+                    DATABASE_ID,
+                    USER_BUDGET_ID,
+                    user.current.$id,
+                    { userId: user.current.$id, Budget: budget }
+                );
+                setBudget(response.budget);
+                setLoading(false);
+            } catch (error) {
+                console.error(error);
+            }
+        } else {
+            const response = await databases.updateDocument(
+                DATABASE_ID,
+                USER_BUDGET_ID,
+                user.current.$id,
+                { userId: user.current.$id, Budget: budget }
+            );
+            setBudget(response.budget);
+            setLoading(false);
+        }
     }
 
-    async function update(userId, budget) {
-        console.log({ userId, budget });
-        const response = await databases.updateDocument(
+    async function init() {
+        const response = await databases.listDocuments(
             DATABASE_ID,
             USER_BUDGET_ID,
-            userId,
-            budget
+            [Query.equal("userId", user.current ? user.current.$id : "")]
         );
-        // if unable to update, add
-        if (!response) add(userId, budget);
 
-        setBudget(response);
-    }
-
-    async function init(userId) {
-        const response = await databases.getDocument(
-            DATABASE_ID,
-            USER_BUDGET_ID,
-            userId
-        );
-        setBudget(response);
+        if (response.documents.length > 0) {
+            const response = await databases.updateDocument(
+                DATABASE_ID,
+                USER_BUDGET_ID,
+                user.current.$id,
+                { userId: user.current.$id, Budget: budget }
+            );
+            setBudget(response.budget);
+        }
     }
 
     useEffect(() => {
-        if (user.current) init(user.current.$id);
-    }, [user]);
+        init();
+    }, []);
 
     return (
-        <BudgetContext.Provider value={{ current: budget, update, add }}>
+        <BudgetContext.Provider value={{ current: budget, updateBudget }}>
             {props.children}
         </BudgetContext.Provider>
     );
