@@ -4,6 +4,7 @@ import { useAuth } from "../hooks/useAuth";
 import AppHeader from "../components/AppHeader";
 import AppBody from "../components/AppBody";
 import AppFooter from "../components/AppFooter";
+import LoadingSpinner from "../components/LoadingSpinner";
 
 function App() {
     const navigate = useNavigate();
@@ -17,6 +18,7 @@ function App() {
 
     return (
         <>
+            <LoadingSpinner />
             <AppHeader />
             <AppBody />
             <AppFooter />

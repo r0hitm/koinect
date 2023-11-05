@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Manrope:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Manrope:wght@700&display=swap");
 
 :root {
-    --theme-100: #FCFFFC;
-    --theme-300: #B3EFB2;
+    --theme-100: #fcfffc;
+    --theme-300: #b3efb2;
     --theme-500: #22c55e;
     --theme-600: #166534;
-    --theme-700: #001A23;
+    --theme-700: #001a23;
     --gray-50: #f8fafc;
     --gray-100: #f1f5f9;
     --gray-200: #e2e8f0;
@@ -22,9 +22,8 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     font-weight: 400;
-
 }
 
 body {
@@ -37,9 +36,8 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Manrope', sans-serif;
+    font-family: "Manrope", sans-serif;
     font-weight: 700;
-
 }
 
 /* header */
@@ -66,13 +64,11 @@ h6 {
     background-color: var(--theme-500);
     color: var(--theme-900);
     font-weight: 600;
-
 }
 
 .primaryButton:hover {
     transform: scale(0.95);
     transition: all 0.25s ease-in-out;
-
 }
 
 /* secondary button */
@@ -82,12 +78,11 @@ h6 {
     display: flex;
     text-decoration: none;
     border: solid 2px var(--theme-500);
-    background-color: #FCFFFC00;
+    background-color: #fcfffc00;
     border-radius: 10px;
     padding: 6px 12px;
     color: var(--theme-900);
     font-weight: 600;
-
 }
 
 .secondaryButton:hover {
@@ -95,25 +90,19 @@ h6 {
     transition: all 0.25s ease-in-out;
 }
 
-
-
 .logoWithText {
     display: flex;
     margin: 0 0 0 0;
-
 }
 
 .buttonSVG {
     margin-right: 4px;
-
 }
 
 .subscriptionSection {
     display: flex;
     justify-content: space-between;
     padding: 24px 0;
-
-
 }
 
 .subscriptionItemCard {
@@ -130,7 +119,6 @@ h6 {
     display: flex;
     flex-direction: column;
     gap: 2.5px;
-
 }
 
 .categoryTag {
@@ -142,15 +130,12 @@ h6 {
     font-weight: 600;
     font-size: 12px;
     max-width: fit-content;
-
-
 }
 
 .priceTag {
     color: var(--theme-700);
     font-weight: 600;
 }
-
 
 .dataPlaceholder {
     padding: 14px;
@@ -179,7 +164,6 @@ form {
     padding-top: 12px;
 }
 
-
 .footerEndtext {
     /* position: absolute;
     bottom: 0;
@@ -193,7 +177,24 @@ form {
     width: 6px;
 }
 
-::-webkit-scrollbar-thumb{
-border-radius: 100px;
+::-webkit-scrollbar-thumb {
+    border-radius: 100px;
     background-color: var(--theme-500);
+}
+
+.loadingSpinner {
+    display: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: "red";
+    z-index: 100;
+}
+
+.spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
