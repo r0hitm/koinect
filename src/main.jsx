@@ -9,6 +9,7 @@ import Login from "./pages/Login.jsx";
 import Register from "./pages/Register.jsx";
 
 import { SubscriptionsProvider } from "./hooks/useSubscriptions.jsx";
+import { BudgetProvider } from "./hooks/useBudget.jsx";
 
 const router = createBrowserRouter([
     {
@@ -29,7 +30,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <React.StrictMode>
         <AuthProvider>
             <SubscriptionsProvider>
-                <RouterProvider router={router} />
+                <BudgetProvider>
+                    <RouterProvider router={router} />
+                </BudgetProvider>
             </SubscriptionsProvider>
         </AuthProvider>
     </React.StrictMode>
