@@ -1,9 +1,10 @@
 import Subscriptions from "../components/Subscriptions";
+import Insights from "../components/Insights";
 
 function AppBody() {
     return (
         <main className="">
-            {/* <Insights/> */}
+            <Insights />
             <Subscriptions />
             {/* <Graph/> */}
         </main>

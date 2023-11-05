@@ -206,6 +206,7 @@ form {
     transform: translate(-50%, -50%);
 }
 
+<<<<<<< HEAD
 
 .dropdown {
   position: relative;
@@ -236,4 +237,30 @@ form {
 
 .deleteBtn{
     color: red;
+=======
+/* insights section */
+
+.insights-section {
+    display: flex;
+    flex-direction: column;
+    padding: 24px 12px;
+}
+
+.insights-section h2 {
+    margin-bottom: 12px;
+}
+
+.insights-flex-box {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.insights-flex-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+>>>>>>> dev
 }
