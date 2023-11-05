@@ -5,7 +5,9 @@ export default function LoadingSpinner() {
     const { loading } = useAuth();
     return loading ? (
         <div className="loadingSpinner">
-            <div className="spinner"></div>
+            <span class="loader"></span> {/*This is spinner component to be added. */ }
+            <div className="spinner">
+            </div>
         </div>
     ) : null;
 }
