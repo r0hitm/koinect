@@ -36,25 +36,32 @@ export default function Insights() {
     }, [subscriptions]);
 
     return (
-        <div className="insights-section">
+        <div className="insightsSection">
             <h2>Insights</h2>
-            <div className="insights-flex-box">
-                <div className="insights-flex-item">
-                    <h3>Subscriptions</h3>
-                    <p>{subsCount}</p>
+            <div className="insightsFlexBox">
+
+                <div className="upperBox">
+                    <div className="insightsFlexItem">
+                        <h1>{subsCount}</h1>
+                        <span>Subscriptions</span>
+                    </div>
+                    <div className="insightsFlexItem">
+                        <h1>{totalExpenditure}</h1>
+                        <span>Total Expenditure</span>
+                    </div>
                 </div>
-                <div className="insights-flex-item">
-                    <h3>Total Expenditure</h3>
-                    <p>{totalExpenditure}</p>
+
+            <div className="lowerBox">
+                <div className="insightsFlexItem">
+                    <h1>{thisMonthExpenditure}</h1>
+                    <span>This Month&apos;s Expenditure</span>
                 </div>
-                <div className="insights-flex-item">
-                    <h3>This Month&apos;s Expenditure</h3>
-                    <p>{thisMonthExpenditure}</p>
+                <div className="insightsFlexItem">
+                    <h1>{upcomingPayments}</h1>
+                    <span>Payments Due this month</span>
                 </div>
-                <div className="insights-flex-item">
-                    <h3>Payments Due this month</h3>
-                    <p>{upcomingPayments}</p>
                 </div>
+
             </div>
         </div>
     );

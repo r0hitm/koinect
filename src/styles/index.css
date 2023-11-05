@@ -317,3 +317,23 @@ form {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+.insightsFlexBox{
+    padding: 12px 0;
+}
+.insightsFlexItem{
+    border: solid 1px var(--gray-200);
+    border-radius: 8px;
+    padding: 10px;
+    margin: 4px;
+}
+.upperBox, .lowerBox{
+    display: grid;    
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+    /* width: 100%; */
+
+}
+.upperBox>span, .lowerBox>span{
+    color: var(--gray-200);
+}
