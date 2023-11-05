@@ -1,9 +1,9 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import { DATABASE_ID, COLLECTION_ID } from "./appwrite_id";
-import { databases } from "./appwrite";
+import { DATABASE_ID, COLLECTION_ID } from "../lib/appwrite_id";
+import { databases } from "../lib/appwrite";
 import { Query, ID } from "appwrite";
 import PropTypes from "prop-types";
-import { useAuth } from "../hooks/useAuth";
+import { useAuth } from "./useAuth";
 
 const SubscriptionsContext = createContext();
 
