@@ -98,34 +98,9 @@ function Register() {
                         </div>
                     </form>
                 </div>
-<<<<<<< HEAD
-                <div>
-                    <input className="dataPlaceholder" type="password" placeholder="Password" defaultValue={password} onChange={event => setPassword(event.target.value)} required />
-                </div>
-                <div>
-                    <input className="dataPlaceholder"
-                        type="password"
-                        placeholder="Confirm Password"
-                        onChange={event => setConfirm(event.target.value)}
-                        required
-                    />
-                </div>
-                {error && <p className="errorMessage">{error}</p>}
-                <div>
-                    <button className="loginBtn primaryButton" type="submit" disabled={loading}>
-                        Create Account
-                    </button>
-                </div>
-                <div>Already have an account? <Link to="/login">Login here</Link></div>
-            </form>
-           </div>
-        </section>
-    );
-=======
             </section>
         );
     }
->>>>>>> dev
 }
 
 export default Register;

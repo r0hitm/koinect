@@ -31,34 +31,6 @@ function Login() {
             });
     };
 
-<<<<<<< HEAD
-    return (
-        <section>
-            <AppHeader />
-            <div className="loginForm">
-                <h1>Log into your account</h1>
-                <form onSubmit={handleLogin}>
-                    <div>
-                        <input className="dataPlaceholder" type="email" placeholder="Email" value={email} onChange={event => setEmail(event.target.value)} required />
-                    </div>
-                    <div>
-                        <input className="dataPlaceholder" type="password" placeholder="Password" value={password} onChange={event => setPassword(event.target.value)} required
-                        />
-                    </div>
-                    {error && <p className="errorMessage">{error}</p>}
-                    <div>
-                        <button className="loginBtn primaryButton" type="submit" disabled={loading}>
-                            Login
-                        </button>
-                    </div>
-                    <div>
-                        Don&apos;t have an account? <Link to="/register">Register Here</Link>
-                    </div>
-                </form>
-            </div>
-        </section>
-    );
-=======
     if (loading) {
         return <LoadingSpinner />;
     } else {
@@ -109,7 +81,6 @@ function Login() {
             </section>
         );
     }
->>>>>>> dev
 }
 
 export default Login;
