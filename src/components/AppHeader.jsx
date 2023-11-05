@@ -5,7 +5,7 @@ function AppHeader() {
     return (
         <header>
             <div className="header">
-            <div className="logoWithText">
+                <div className="logoWithText">
                     <svg
                         width="48"
                         height="36"
@@ -41,24 +41,29 @@ function AppHeader() {
                         />
                     </svg>
 
-                    <h2 className="logoName" >Koinect</h2>
+                    <h2 className="logoName">Koinect</h2>
                 </div>
 
-                <button className="primaryButton logoutButton" onClick={() => user.logout()}>
-                    <svg
-                        className="buttonSVG"
-                        width="16px" 
-                        height="16px"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
+                {user.current ? (
+                    <button
+                        className="primaryButton logoutButton"
+                        onClick={() => user.logout()}
                     >
-                        <path
-                            fill="currentColor"
-                            d="m17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"
-                        />
-                    </svg>
-                    Logout
-                </button>
+                        <svg
+                            className="buttonSVG"
+                            width="16px"
+                            height="16px"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                fill="currentColor"
+                                d="m17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"
+                            />
+                        </svg>
+                        Logout
+                    </button>
+                ) : null}
             </div>
         </header>
     );

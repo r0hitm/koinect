@@ -196,7 +196,7 @@ input[type="number"] {
 .loginForm {
     display: flex;
     flex-direction: column;
-    width: 100vw;
+    width: 100%;
     padding: 24px 12px;
 }
 
@@ -206,6 +206,10 @@ input[type="number"] {
 
 form {
     padding-top: 12px;
+}
+
+form > div {
+    margin-bottom: 12px;
 }
 
 .footerEndtext {
@@ -372,4 +376,10 @@ hr.divider {
     height: 2px;
     width: 80%;
     background-color: var(--theme-500);
+}
+
+.error-message {
+    color: red;
+    font-size: 16px;
+    margin-top: 4px;
 }

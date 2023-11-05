@@ -42,63 +42,67 @@ function Register() {
         return <LoadingSpinner />;
     } else {
         return (
-            <section>
+            <>
                 <AppHeader />
-                <div className="loginForm">
-                    <h1>Get Started</h1>
-                    <p>Manage your subscriptions with ease.</p>
-                    <br />
-                    <form onSubmit={handleRegister}>
-                        <div>
-                            <input
-                                className="dataPlaceholder"
-                                type="email"
-                                placeholder="Email"
-                                defaultValue={email}
-                                onChange={event => setEmail(event.target.value)}
-                                required
-                            />
-                        </div>
-                        <div>
-                            <input
-                                className="dataPlaceholder"
-                                type="password"
-                                placeholder="Password"
-                                defaultValue={password}
-                                onChange={event =>
-                                    setPassword(event.target.value)
-                                }
-                                required
-                            />
-                        </div>
-                        <div>
-                            <input
-                                className="dataPlaceholder"
-                                type="password"
-                                placeholder="Confirm Password"
-                                onChange={event =>
-                                    setConfirm(event.target.value)
-                                }
-                                required
-                            />
-                        </div>
-                        {error && <p>{error}</p>}
-                        <div>
-                            <button
-                                className="loginBtn primaryButton"
-                                type="submit"
-                                disabled={loading}
-                            >
-                                Create Account
-                            </button>
-                        </div>
-                        <div>
-                            Already have an account?{" "}
-                            <Link to="/login">Login here</Link>
-                        </div>
-                    </form>
+                <div className="roundedBG">
+                    <div className="loginForm">
+                        <h1>Get Started</h1>
+                        <p>Manage your subscriptions with ease.</p>
+                        <br />
+                        <form onSubmit={handleRegister}>
+                            <div>
+                                <input
+                                    className="dataPlaceholder"
+                                    type="email"
+                                    placeholder="Email"
+                                    defaultValue={email}
+                                    onChange={event =>
+                                        setEmail(event.target.value)
+                                    }
+                                    required
+                                />
+                            </div>
+                            <div>
+                                <input
+                                    className="dataPlaceholder"
+                                    type="password"
+                                    placeholder="Password"
+                                    defaultValue={password}
+                                    onChange={event =>
+                                        setPassword(event.target.value)
+                                    }
+                                    required
+                                />
+                            </div>
+                            <div>
+                                <input
+                                    className="dataPlaceholder"
+                                    type="password"
+                                    placeholder="Confirm Password"
+                                    onChange={event =>
+                                        setConfirm(event.target.value)
+                                    }
+                                    required
+                                />
+                            </div>
+                            {error && <p className="error-message">{error}</p>}
+                            <div>
+                                <button
+                                    className="loginBtn primaryButton"
+                                    type="submit"
+                                    disabled={loading}
+                                >
+                                    Create Account
+                                </button>
+                            </div>
+                            <div>
+                                Already have an account?{" "}
+                                <Link to="/login">Login here</Link>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-            </section>
+            </>
         );
     }
 }
