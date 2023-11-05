@@ -125,6 +125,7 @@ input[type="number"] {
 
 .buttonSVG {
     margin-right: 4px;
+    margin-left: 10px;
 }
 
 .subscriptionSection {
@@ -134,13 +135,23 @@ input[type="number"] {
 }
 
 .subscriptionItemCard {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+
+.subscriptionItemCard .lhs-sitem {
     display: flex;
-    padding: 16px;
-    margin-bottom: 8px;
-    border: solid 1px #16653440;
-    border-radius: 9px;
+    flex-direction: column;
+    align-items: flex-start;
     justify-content: space-between;
+    text-align: left;
+}
+
+.subscriptionItemCard .rhs-sitem {
+    display: flex;
+    justify-content: flex-end;
     align-items: center;
+    text-align: right;
 }
 
 .ItemDetails {

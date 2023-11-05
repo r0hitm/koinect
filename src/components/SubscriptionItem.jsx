@@ -4,16 +4,17 @@ import PropTypes from "prop-types";
 function SubscriptionItem({ subscription, deleteHandler }) {
     return (
         <div className="subscriptionItemCard">
-            <div className="ItemDetails">
-                <h3>{subscription.subscriptionName}</h3>
-                <p>
-                    {subscription.subscriptionMonth}/
-                    {subscription.subscriptionDate}
-                </p>
+            <div className="lhs-sitem">
+                <div className="ItemDetails">
+                    <h3>{subscription.subscriptionName}</h3>
+                    <p>
+                        {subscription.subscriptionMonth}/
+                        {subscription.subscriptionDate}
+                    </p>
+                </div>
             </div>
-            <div className="flex">
+            <div className="rhs-sitem">
                 <h3 className="priceTag">₹{subscription.price}</h3>
-
                 <div className="dropdown">
                     <svg
                         className="buttonSVG"
