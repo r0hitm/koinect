@@ -5,7 +5,7 @@ function AppHeader() {
     return (
         <header>
             <div className="header">
-                <div className="logoWithText">
+            <div className="logoWithText">
                     <svg
                         width="48"
                         height="36"
@@ -47,7 +47,7 @@ function AppHeader() {
                 <button className="primaryButton" onClick={() => user.logout()}>
                     <svg
                         className="buttonSVG"
-                        width="16px"
+                        width="16px" 
                         height="16px"
                         viewBox="0 0 24 24"
                         xmlns="http://www.w3.org/2000/svg"
