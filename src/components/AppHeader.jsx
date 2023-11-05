@@ -41,10 +41,10 @@ function AppHeader() {
                         />
                     </svg>
 
-                    <h2>KoiNect</h2>
+                    <h2 className="logoName" >KoiNect</h2>
                 </div>
 
-                <button className="primaryButton" onClick={() => user.logout()}>
+                <button className="primaryButton logoutButton" onClick={() => user.logout()}>
                     <svg
                         className="buttonSVG"
                         width="16px" 

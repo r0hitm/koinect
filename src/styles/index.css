@@ -27,10 +27,14 @@
 }
 
 body {
-    padding: 0 12px 0 12px;
+    background-color: var(--theme-500);
 
 }
-
+.roundedBG{
+    padding: 16px 16px 0 16px;
+    border-radius: 24px 24px 0 0;
+    background-color: var(--gray-100);
+}
 h1,
 h2,
 h3,
@@ -45,10 +49,9 @@ h6 {
 .header {
     display: flex;
     justify-content: space-between;
-    padding: 24px 4px;
+    padding: 24px 12px;
     align-items: center;
 }
-
 /* button components */
 /* primary button */
 .primaryButton {
@@ -343,4 +346,9 @@ form {
 .insightSubtitles{
     color: var(--gray-500);
     font-size: 14px;
+}
+
+.logoutButton{
+    background-color: var(--theme-100);
+    color: var(--theme-700);
 }
