@@ -46,7 +46,7 @@ export default function Insights() {
                         <span className="insightSubtitles" >Subscriptions</span>
                     </div>
                     <div className="insightsFlexItem">
-                        <h1>{totalExpenditure}</h1>
+                        <h1>₹{totalExpenditure}</h1>
                         <span className="insightSubtitles" >Total Expenditure</span>
                     </div>
                 </div>

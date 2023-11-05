@@ -19,7 +19,7 @@ function SubscriptionItem({
                 </div> */}
             </div>
   <div className="flex">
-  <h3 className="priceTag">${price}</h3>
+  <h3 className="priceTag">₹{price}</h3>
 
 <div className="dropdown">
  <svg  className="buttonSVG" width="20" height="20" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg">
