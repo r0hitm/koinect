@@ -16,13 +16,14 @@ function App() {
         }
     }, [user, navigate]);
 
-    return (
+    return user.current ? (
         <>
-            <LoadingSpinner />
             <AppHeader />
             <AppBody />
             <AppFooter />
         </>
+    ) : (
+        <LoadingSpinner />
     );
 }
 
