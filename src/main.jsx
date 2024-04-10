@@ -11,27 +11,22 @@ import Register from "./pages/Register.jsx";
 import { SubscriptionsProvider } from "./hooks/useSubscriptions.jsx";
 import { BudgetProvider } from "./hooks/useBudget.jsx";
 
-const router = createBrowserRouter(
-    [
-        {
-            path: "/",
-            element: <App />,
-            children: [
-                {
-                    path: "/login",
-                    element: <Login />,
-                },
-                {
-                    path: "/register",
-                    element: <Register />,
-                },
-            ],
-        },
-    ],
+const router = createBrowserRouter([
     {
-        basename: "/koinect",
-    }
-);
+        path: "/",
+        element: <App />,
+        children: [
+            {
+                path: "/login",
+                element: <Login />,
+            },
+            {
+                path: "/register",
+                element: <Register />,
+            },
+        ],
+    },
+]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
     <React.StrictMode>
