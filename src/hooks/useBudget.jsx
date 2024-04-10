@@ -14,7 +14,7 @@ export function useBudget() {
 
 export function BudgetProvider(props) {
     const [budget, setBudget] = useState(0);
-    const [loading, setLoading] = useState(true);
+    // const [loading, setLoading] = useState(true);
     const user = useAuth();
 
     async function updateBudget(budget) {
@@ -33,7 +33,7 @@ export function BudgetProvider(props) {
                     { userId: user.current.$id, Budget: budget }
                 );
                 setBudget(response.budget);
-                setLoading(false);
+                // setLoading(false);
             } catch (error) {
                 console.error(error);
             }
@@ -45,7 +45,7 @@ export function BudgetProvider(props) {
                 { userId: user.current.$id, Budget: budget }
             );
             setBudget(response.budget);
-            setLoading(false);
+            // setLoading(false);
         }
     }
 

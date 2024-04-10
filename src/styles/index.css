@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Manrope:wght@700&display=swap");
 
 :root {
-    --theme-100: #fcfffc;
-    --theme-300: #b3efb2;
-    --theme-500: #22c55e;
-    --theme-600: #166534;
-    --theme-700: #001a23;
+    --theme-100: #595cd9;
+    --theme-300: #303d50;
+    --theme-500: #6366f1;
+    --theme-600: #212f4d;
+    --theme-700: #1c2740;
     --gray-50: #f8fafc;
     --gray-100: #f1f5f9;
     --gray-200: #e2e8f0;
@@ -31,13 +31,17 @@ body {
     max-height: 100vh;
     overflow-y: scroll;
     overflow-x: hidden;
+    position: relative;
 }
 .roundedBG {
     padding: 16px 16px 0 16px;
     border-radius: 24px 24px 0 0;
-    background-color: var(--gray-100);
+    background-color: var(--theme-700);
     padding: 24px 24px 0 24px;
-    height: 100vh;
+    /* height: 100vh; */
+    min-height: 80vh;
+    color: var(--gray-50);
+    padding-bottom: 5rem;
 }
 h1,
 h2,
@@ -48,6 +52,13 @@ h6 {
     font-family: "Manrope", sans-serif;
     font-weight: 700;
 }
+
+.logoName {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--gray-200);
+}
+
 
 input[type="text"],
 input[type="date"],
@@ -60,8 +71,9 @@ input[type="number"] {
     outline: none;
     font-size: 16px;
     font-weight: 600;
-    color: var(--theme-700);
+    color: var(--theme-50);
     width: 80%;
+    background-color: var(--theme-300);
 }
 
 /* header */
@@ -101,7 +113,7 @@ input[type="number"] {
     display: flex;
     text-decoration: none;
     border: solid 2px var(--theme-500);
-    background-color: #fcfffc00;
+    background-color: var(--theme-500);
     border-radius: 10px;
     padding: 6px 12px;
     color: var(--theme-900);
@@ -137,10 +149,10 @@ input[type="number"] {
 .subscriptionItemCard {
     display: grid;
     grid-template-columns: 3fr 1fr;
-    border: 1px solid var(--gray-400);
-    border-radius: 8px;
+    border-bottom: solid 1px var(--gray-400);
     padding: 4px;
     margin-bottom: 8px;
+    padding: 12px;
 }
 
 .subscriptionItemCard .lhs-sitem {
@@ -188,8 +200,7 @@ input[type="number"] {
 }
 
 .subscriptionList {
-    /* max-height: 60vh; */
-    overflow-y: scroll;
+    overflow-y: auto;
     padding-bottom: 50px;
 }
 
@@ -212,9 +223,35 @@ form > div {
     margin-bottom: 12px;
 }
 
-.footerEndtext {
-    text-align: center;
-    color: var(--gray-900);
+.mobile-nav { 
+    position: fixed;
+    bottom: 0;
+
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--theme-600);
+    padding: 1rem 0;
+    z-index: 100;
+    color: var(--gray-200);
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-item svg {
+    color: var(--gray-200);
+    width: 32px;
+    height: 32px;
+}
+
+.mobile-nav:first-child svg {
+    width: 40px;
+    height: 40px;
 }
 
 ::-webkit-scrollbar {
@@ -238,7 +275,7 @@ form > div {
     display: inline-block;
     text-decoration: none;
     padding: 15px;
-    background-color: #fff;
+    /* background-color: #fff; */
     border-radius: 3px;
     text-transform: uppercase;
     color: #585858;
@@ -270,7 +307,7 @@ form > div {
     position: relative;
     width: 500px;
     max-width: 80%;
-    background: #fff;
+    background-color: var(--theme-700);
     padding: 1em 2em;
 }
 
@@ -301,7 +338,7 @@ form > div {
     position: absolute;
     right: 0;
     margin: 0;
-    background-color: #f1f1f1;
+    background-color: var(--theme-500);
     z-index: 100;
     border: solid 1px var(--gray-600);
     border-radius: 10px;
@@ -320,7 +357,7 @@ form > div {
 }
 
 .dropdown-content:hover {
-    background-color: #3e8e41;
+    background-color: var(--theme-500);
 }
 
 .deleteBtn {
@@ -390,4 +427,17 @@ hr.divider {
     color: red;
     font-size: 16px;
     margin-top: 4px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--theme-500);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:visited {
+    color: var(--theme-500);
 }

@@ -6,42 +6,7 @@ function AppHeader() {
         <header>
             <div className="header">
                 <div className="logoWithText">
-                    <svg
-                        width="48"
-                        height="36"
-                        viewBox="0 0 64 49"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <rect
-                            x="48"
-                            width="16"
-                            height="48"
-                            fill="white"
-                            fillOpacity="0.01"
-                        />
-                        <circle cx="24" cy="25" r="24" fill="#FCFFFC" />
-                        <path
-                            d="M12.0338 8.43661V8.43661C15.3195 8.43661 17.9831 11.1002 17.9831 14.3859V34.9967H12.0338V8.43661Z"
-                            fill="#22c55e"
-                        />
-                        <path
-                            d="M29.2543 16.6918C31.4884 14.5911 35.2827 14.3872 37.7291 16.2365V16.2365L16.6977 36.0117L12.2682 32.6634L29.2543 16.6918Z"
-                            fill="#22c55e"
-                        />
-                        <path
-                            d="M12.0338 34.8828H17.9831L15.2113 37.1626L12.0338 39.6704V34.8828Z"
-                            fill="#22c55e"
-                        />
-                        <circle
-                            cx="30.1522"
-                            cy="34.8028"
-                            r="4.86761"
-                            fill="#22c55e"
-                        />
-                    </svg>
-
-                    <h2 className="logoName">Koinect</h2>
+                    <h2 className="logoName">Expense Tracker</h2>
                 </div>
 
                 {user.current ? (
