@@ -95,6 +95,7 @@ function NewSubscriptionModal({ closeFn }) {
                         }}
                     >
                         <div>
+                            <p>Subscription Name</p>
                             <input
                                 className="dataPlaceholder"
                                 type="text"
@@ -106,6 +107,8 @@ function NewSubscriptionModal({ closeFn }) {
                             />
                         </div>
                         <div>
+                            <p>Price</p>
+
                             <input
                                 className="dataPlaceholder"
                                 type="number"
@@ -118,6 +121,7 @@ function NewSubscriptionModal({ closeFn }) {
                             />
                         </div>
                         <div>
+                            <p>Start Date</p>
                             <input
                                 className="dataPlaceholder"
                                 type="date"
@@ -130,6 +134,7 @@ function NewSubscriptionModal({ closeFn }) {
                             />
                         </div>
                         <div>
+                            <p>Frequency</p>
                             <input
                                 className="dataPlaceholder"
                                 type="number"
